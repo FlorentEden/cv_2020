@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import profilPic from './images/ProfilPic.png'
+import Notation from './composents/notation.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  render(){
+    return (
+      <div className="App">
+        <div className="App-Menu">
+          <div className="App-Menu-Me">
+            <img src={profilPic} alt="Profil Picture"/>
+            <h2>Florent Martinez</h2>
+            <h4>UX/UI Designer</h4>
+          </div>
+          <div className="App-Menu-LanguageSkills">
+            <div className="App-Menu-LanguageSkills-List">
+              <h2>Language Skills</h2>
+              <Notation notation={[1,1,1,1,1,1,1,1]} name="Français"></Notation>
+              <Notation notation={[1,1,1,1,1,1,0,0]} name="Rapid Prototyping"></Notation>
+            </div>
+          </div>
+        </div>
+        <div className="App-Spec">
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
